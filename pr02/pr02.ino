@@ -24,6 +24,7 @@ void setup()
   pinMode(led0, OUTPUT);     // definir el pin 9 com una sortida
   pinMode(led1, OUTPUT);
   pinMode(led2, OUTPUT);
+  Serial.begin(9600);
 }
 
 //********** Loop *****************************************************************
@@ -36,9 +37,12 @@ void loop()
   valLdr1 = analogRead(ldr1);   // llegir valor ldr1
   Serial.print("Ldr1 val ");
   Serial.println(valLdr1);
+  delay(200);
   valLdr2 = analogRead(ldr2);   // llegir valor ldr2
   Serial.print("Ldr2 val ");
   Serial.println(valLdr2);
+  delay(200);
+  
   valLdr0 = map(valLdr0, 0, 1023, 0, 255);   // mapejar valor de 0-1023 a 0-255
   analogWrite(led0, valLdr0);    // actualitzar l'estat del led
 
